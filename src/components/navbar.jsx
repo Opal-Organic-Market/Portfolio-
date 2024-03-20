@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,24 +8,27 @@ const Navbar = () => {
         <div className="grid place-content-center">LOGO</div>
         <div className="grid place-content-center">
           <ul className="flex gap-x-3">
-            <li><Link to='/'>HOME</Link></li>
+            <li>
+              <Link to="/">HOME</Link>
+            </li>
             <li>
               <Link to="/aboutpage">ABOUT</Link>
             </li>
             <li>
-                <Link to='/achievementpage'>ACHIEVEMENT</Link>
-                </li>
+              <Link to="/achievementpage">ACHIEVEMENT</Link>
+            </li>
             <li>
-                <Link to='/contactpage'>CONTACT</Link>
-                </li>
+              <Link to="/contactpage">CONTACT</Link>
+            </li>
             <li>
-                <Link to='/experiencepage'>EXPERIENCE</Link>
-                </li>
+              <Link to="/experiencepage">EXPERIENCE</Link>
+            </li>
             <li>
-                <Link to='/postspage'>POSTS</Link>
-                </li>
+              <Link to="/postspage">POSTS</Link>
+            </li>
             <li>
-                <Link to='/skillspage'>SKILLS</Link></li>
+              <Link to="/skillspage">SKILLS</Link>
+            </li>
           </ul>
         </div>
       </div>
