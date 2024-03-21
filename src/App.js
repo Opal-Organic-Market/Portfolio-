@@ -8,6 +8,7 @@ import Contact from './pages/contact';
 import Experience from './pages/experience';
 import Posts from './pages/posts';
 import Skills from './pages/skills';
+
 function App() {
   return (
     <>
@@ -21,6 +22,9 @@ function App() {
 <Route path='/experiencepage' element={<Experience/>}></Route>
 <Route path='/postspage' element={<Posts/>}></Route>
 <Route path='/skillspage' element={<Skills/>}></Route>
+
+
+
 
 </Routes>
 </BrowserRouter>
