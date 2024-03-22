@@ -24,6 +24,7 @@ const Project = () => {
           </p>
         </div>
 
+
         <img
           class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
           src="/docs/images/blog/image-4.jpg"
