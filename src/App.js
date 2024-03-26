@@ -5,7 +5,7 @@ import Homepage from './pages/homepage';
 import About from './pages/about';
 import Achievements from './pages/achievements';
 import Contact from './pages/contact';
-import Experience from './pages/experience';
+import Experience from './pages/experience/experience';
 import Posts from './pages/posts';
 import Skills from './pages/skills';
 import Project from './pages/project';
