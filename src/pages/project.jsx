@@ -22,7 +22,7 @@ const Project = () => {
         Stay healthy with DineRich!
       </p>
       <h4 className="px-4 py-2 ml-3 text-gray-700 font-semibold">Read More</h4>
-      <Link to="/projectsspage">PROJECTS</Link>
+      {/* <Link to="/projectsspage">PROJECTS</Link> */}
     </Card>
     </div>
     </section>
