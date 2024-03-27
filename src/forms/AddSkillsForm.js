@@ -5,7 +5,10 @@ const AddSkillsForm = () => {
     name: '',
     proficiency: '',
     experience: '',
+    category: 'Soft Skills', // Default category
   });
+
+  const categories = ['Soft Skills', 'Languages', 'Frameworks', 'Tools'];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +27,7 @@ const AddSkillsForm = () => {
       name: '',
       proficiency: '',
       experience: '',
+      category: 'Soft Skills', // Reset to default category
     });
   };
 
@@ -66,6 +70,20 @@ const AddSkillsForm = () => {
             placeholder="Enter experience"
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
           />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="category" className="block text-gray-700 font-medium mb-2">Category</label>
+          <select
+            id="category"
+            name="category"
+            value={skill.category}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          >
+            {categories.map(category => (
+              <option key={category} value={category}>{category}</option>
+            ))}
+          </select>
         </div>
         <button
           type="submit"
