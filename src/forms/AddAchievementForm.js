@@ -23,9 +23,15 @@ const AddAchievementForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', achievement);
+    // Post data to API
+    console.log('Achievement data:', achievement);
+    const response = await fetch('https://portfolio-api-nmrs.onrender.com/addachievement', {
+      method: 'POST',
+      body: achievement
+    })
+    console.log('Form submitted:', response);
     setAchievement({
       title: '',
       description: '',
