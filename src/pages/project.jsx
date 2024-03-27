@@ -1,31 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/navbar";
-import Mixedfruit from "../asset/images/mixedfruit.jpg";
-import { Card } from "flowbite-react";
+import Groupphoto2 from "../asset/images/grouphoto2.jpg";
+import axios from "axios";
 
 const Project = () => {
-  return (
-    <section className="bg-white mt-15  ">
-      <Navbar />
-    <div>
-      <h2 className="mt-10 ml-10 mb-5 font-semibold ">FIND OUR EXCITING PROJECTS</h2><hr/>
-    </div>
+  const [project, setProject] = useState()
+  const url = `fix in api`
 
-    <div className="ml-10 grid grid-cols-4 gap-4">
-    <Card
-      className="max-w-sm mt-10"
-      imgAlt="Meaningful alt text for an image that is not purely decorative"
-      imgSrc={Mixedfruit} 
-    >
-      <p className="font-normal mx-auto text-gray-700 dark:text-gray-400 mt-4 mb-10 font-semibold ml-5">
-        DineRich JuiceBar is a Ghanaian based drink hub which produces drinks and savories especially locally made ones with natural ingredients for household consumption and other events. For all your weddings, birthdays, christenings amon others.
-        Stay healthy with DineRich!
-      </p>
-      <h4 className="px-4 py-2 ml-3 text-gray-700 font-semibold">Read More</h4>
-      <Link to="/projectsspage">PROJECTS</Link>
-    </Card>
-    </div>
-    </section>
+useEffect (() => {
+  async function displayOneProject() {
+    try {
+       const project = await axios.get(url)
+       const projectname = project.data
+       console.log(project)
+
+    } catch (error) {
+      console.log(error)
+      
+    }
+    }
+    displayOneProject()
+})
+
+
+  return (
+
+    <>
+      <Navbar />
+      <div className="bg-zinc-400 mt-10">
+        <div className="m-auto w-2/5">
+
+          <a href="#" class="flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={Groupphoto2} alt="" />
+            <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Opal Portfolio Project</h5>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">A team of four junior developers embarked on building a challenging portfolio website, which proved to be both educational and rewarding. Despite initial obstacles, their collaboration, dedication, and perseverance led to the successful completion of the project</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+
+
+   
+    </>
+
   );
 };
 
