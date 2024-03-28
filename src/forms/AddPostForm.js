@@ -30,8 +30,8 @@ const AddPostForm = () => {
     // Handle form submission, e.g., sending data to backend
     const formData = new FormData();
     formData.append('title',post.title );
-    formData.append('title',post.author );
-    formData.append('title',post.body );
+    formData.append('author',post.author );
+    formData.append('body',post.body );
     formData.append('image',post.image);
     console.log('Form submitted:', post);
     const response = await fetch('https://portfolio-api-nmrs.onrender.com/addblogs',{
