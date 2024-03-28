@@ -10,20 +10,20 @@ const About = () => {
       <div>
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
             <p className="font-normal text-sm leading-3 text-indigo-700 hover:text-indigo-800 cursor-pointer pb-2">About</p>
-            <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
+            <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12 ">
                 <div className="w-full lg:w-6/12">
-                    <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9">Opal Portfolio Website</h2>
+                    <h2 className="w-full font-semibold lg:text-4xl text-3xl lg:leading-10 leading-9">Opal Portfolio Website</h2>
                     <p className="font-normal text-base leading-6 text-gray-600 mt-6"> Through collaboration and perseverance, we overcome obstacles and create an impressive website that showcases our talents and growth as developers. This project not only strengthens our skills but also fosters camaraderie and prepares us for future challenges in the field of web development.</p>
                 </div>
-                <div className="w-full lg:w-6/12">
-                    <img className="lg:block hidden w-full" src={Aboutbg} alt="people discussing on board" />
+                <div className="w-80 place-self-center">
+                    <img className="lg:block hidden w-full rounded-s-md" src={Aboutbg} alt="people discussing on board" />
                 </div>
             </div>
             
 
-            <div className="flex lg:flex-row flex-col md:gap-14 gap-16 justify-between lg:mt-20 mt-16">
+            <div className="flex lg:flex-row flex-col md:gap-14 gap-16 justify-between lg:mt-20">
                 <div className="w-full lg:w-6/12">
-                    <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">Our Mission</h2>
+                    <h2 className="font-semibold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">Our Mission</h2>
                     <p className="font-normal text-base leading-6 text-gray-600 mt-6 w-full lg:w-10/12 xl:w-9/12">Our mission is to inspire and support aspiring developers in tackling challenging projects, fostering a culture of continuous learning and collaboration. Through initiatives like building portfolio websites, we aim to empower individuals to overcome obstacles, hone their skills, and unleash their full potential</p>
                 
                 </div>
@@ -55,7 +55,7 @@ const About = () => {
                                 </svg>
                             </div>
                             <div className="">
-                                <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800">Board</p>
+                                <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800">Strength</p>
                                 <p className="mt-2 font-normal text-base leading-6 text-gray-600">Despite facing difficulties, we embrace the opportunity to learn new skills and technologies.</p>
                             </div>
                         </div>
