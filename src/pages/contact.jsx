@@ -11,9 +11,9 @@ const Contact = () => {
   return (
     <>
          <div>
-      <Navbar />
       <div>
         <section className="text-gray-600 body-font relative">
+        <Navbar />
           <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
             <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
               <iframe
@@ -25,18 +25,18 @@ const Contact = () => {
                 marginHeight="0"
                 marginWidth="0"
                 scrolling="no"
-                src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15881.896161062314!2d-0.1517205!3d5.6443376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9b550b4b1287%3A0x5bfe4abfd88d302b!2sMEST%20Africa!5e0!3m2!1sen!2sgh!4v1711629472822!5m2!1sen!2sgh"
               ></iframe>
               <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
                 <div className="lg:w-1/2 px-6">
                   <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
-                  <p className="mt-1">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</p>
+                  <p className="mt-1">MEST Africa East Legon</p>
                 </div>
                 <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
                   <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
-                  <a href="mailto:example@email.com" className="text-red-500 leading-relaxed">example@email.com</a>
+                  <a href="mailto:example@email.com" className="text-red-500 leading-relaxed">info@opal.com</a>
                   <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
-                  <p className="leading-relaxed">123-456-7890</p>
+                  <p className="leading-relaxed">+233-23-456-7890</p>
                 </div>
               </div>
             </div>

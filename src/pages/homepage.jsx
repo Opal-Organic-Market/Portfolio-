@@ -1,15 +1,14 @@
-import React from 'react'
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+import React from "react";
+import Footer from "../components/footer";
+import Header from "../components/header";
 
 const Homepage = () => {
   return (
     <div>
-      <Navbar/>
-      <Footer/>
-      
+      <Header />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default Homepage;

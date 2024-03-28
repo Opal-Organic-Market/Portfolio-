@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <div className="h-14 bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-between ">
-        <div className="grid place-content-center">LOGO</div>
+      <div className="h-14 flex justify-center ">
         <div className="grid place-content-center">
-          <ul className="flex gap-x-3">
+          <ul className="flex gap-x-5 m-5 font-bold ">
             <li>
               <Link to="/">HOME</Link>
             </li>
@@ -32,7 +31,6 @@ const Navbar = () => {
             <li>
               <Link to="/projectsspage">PROJECTS</Link>
             </li>
-            <li> <Link to="/adminpage">Admin</Link></li>
           </ul>
         </div>
       </div>

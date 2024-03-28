@@ -29,8 +29,8 @@ const Achievements = () => {
     <>
       <Navbar />
       <div className="container mx-auto">
-        <h1 className="text-3xl font-bold mb-4">Achievements</h1>
-        <div className="grid grid-cols-2 gap-4">
+        <h1 className="text-3xl font-bold mb-4">ACHIEVEMENT</h1>
+        <div className="grid grid-cols-4 gap-x-8 gap-y-4 gap-4">
           {achievements.map((achievement) => (
             <div key={achievement._id} className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <a href="#">
