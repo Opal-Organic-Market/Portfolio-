@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const AddExperienceForm = () => {
   const [experience, setExperience] = useState({
-    title: '',
-    institution: '',
-    description: '',
-    startDate: '',
-    endDate: '',
+    title: "",
+    institution: "",
+    description: "",
+    startDate: "",
+    endDate: "",
   });
 
   const handleChange = (e) => {
@@ -17,23 +17,32 @@ const AddExperienceForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission, e.g., sending data to backend
     const formData = new FormData();
-    formData.append('title', experience.title)
-    formData.append('title', experience.institution)
-    formData.append('title', experience.description)
-    formData.append('title', experience.startDate)
-    formData.append('title', experience.endDate)
-    console.log('Form submitted:', experience);
+    formData.append("title", experience.title);
+    formData.append("title", experience.institution);
+    formData.append("title", experience.description);
+    formData.append("title", experience.startDate);
+    formData.append("title", experience.endDate);
+    console.log("Form submitted:", experience);
+
+    const response = await fetch(
+      "https://portfolio-api-nmrs.onrender.com/addexperiences",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+    console.log("Form submitted:", response);
     // Reset form fields
     setExperience({
-      title: '',
-      institution: '',
-      description: '',
-      startDate: '',
-      endDate: '',
+      title: "",
+      institution: "",
+      description: "",
+      startDate: "",
+      endDate: "",
     });
   };
 
@@ -42,7 +51,12 @@ const AddExperienceForm = () => {
       <h2 className="text-2xl font-semibold mb-4">Add New Experience</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="title" className="block text-gray-700 font-medium mb-2">Title</label>
+          <label
+            htmlFor="title"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Title
+          </label>
           <input
             type="text"
             id="title"
@@ -54,7 +68,12 @@ const AddExperienceForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="institution" className="block text-gray-700 font-medium mb-2">Institution</label>
+          <label
+            htmlFor="institution"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Institution
+          </label>
           <input
             type="text"
             id="institution"
@@ -66,7 +85,12 @@ const AddExperienceForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="description" className="block text-gray-700 font-medium mb-2">Description</label>
+          <label
+            htmlFor="description"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Description
+          </label>
           <textarea
             id="description"
             name="description"
@@ -77,7 +101,12 @@ const AddExperienceForm = () => {
           ></textarea>
         </div>
         <div className="mb-4">
-          <label htmlFor="startDate" className="block text-gray-700 font-medium mb-2">Start Date</label>
+          <label
+            htmlFor="startDate"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Start Date
+          </label>
           <input
             type="date"
             id="startDate"
@@ -88,7 +117,12 @@ const AddExperienceForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="endDate" className="block text-gray-700 font-medium mb-2">End Date (Optional)</label>
+          <label
+            htmlFor="endDate"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            End Date (Optional)
+          </label>
           <input
             type="date"
             id="endDate"
