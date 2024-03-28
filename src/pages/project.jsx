@@ -29,21 +29,21 @@ const Project = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-slate-700 h-dvh">
-        <div className="m-auto w-2/5 ">
-          {projects.map((project) => (
-            <div key={project._id}>
-              <a href="#" className=" flex items-center bg-gray-300 border hover:bg-gray-100 dark:border-gray-700  dark:hover:bg-gray-700">
-                <img className="h-80 md:w-48 md:rounded-none md:rounded-lg" src={project.image} alt="project" />
-                <div className="flex flex-col justify-between p-4">
-                  <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white mt-10 underline decoration-wavy">{project.title}</h5>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 ">{project.description}</p>
-                </div>
-              </a>
-            </div>
-          ))}
-        </div>
-        </div>
+      <div className="bg-rose-850 h-dvh pt-8 w-full"> {/* Added pt-8 for 8px padding top */}
+  <div className="m-auto w-2/5">
+    {projects.map((project) => (
+      <div key={project._id}>
+        <a href="#" className="flex items-center bg-rose-50 border hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-700">
+          <img className="h-80 md:w-60 md:rounded-none md:rounded-lg" src={project.image} alt="project" />
+          <div className="flex flex-col justify-between p-4">
+            <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white mt-10">{project.title}</h5>
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{project.description}</p>
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+</div>
     </>
   );
 };
