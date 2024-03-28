@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const AddAchievementForm = () => {
   const [achievement, setAchievement] = useState({
-    title: '',
-    description: '',
+    title: "",
+    description: "",
     image: null,
   });
 
@@ -26,15 +26,21 @@ const AddAchievementForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Post data to API
-    console.log('Achievement data:', achievement);
-    const response = await fetch('https://portfolio-api-nmrs.onrender.com/addachievement', {
-      method: 'POST',
-      body: achievement
-    })
-    console.log('Form submitted:', response);
+    const formData = new FormData();
+    formData.append("title", achievement.title);
+    formData.append("description", achievement.description);
+    formData.append("image", achievement.image);
+    console.log("Achievement data:", achievement);
+    const response = await fetch(
+      "https://portfolio-api-nmrs.onrender.com/addachievements",
+      {
+        method: "POST",
+        body: formData,
+      });
+    console.log("Form submitted:", response);
     setAchievement({
-      title: '',
-      description: '',
+      title: "",
+      description: "",
       image: null,
     });
   };
@@ -44,7 +50,12 @@ const AddAchievementForm = () => {
       <h2 className="text-2xl font-semibold mb-4">Add New Achievement</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="title" className="block text-gray-700 font-medium mb-2">Title</label>
+          <label
+            htmlFor="title"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Title
+          </label>
           <input
             type="text"
             id="title"
@@ -56,7 +67,12 @@ const AddAchievementForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="description" className="block text-gray-700 font-medium mb-2">Description</label>
+          <label
+            htmlFor="description"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Description
+          </label>
           <textarea
             id="description"
             name="description"
@@ -67,7 +83,12 @@ const AddAchievementForm = () => {
           ></textarea>
         </div>
         <div className="mb-4">
-          <label htmlFor="image" className="block text-gray-700 font-medium mb-2">Image</label>
+          <label
+            htmlFor="image"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Image
+          </label>
           <div className="flex items-center justify-between">
             <input
               type="file"
@@ -83,7 +104,9 @@ const AddAchievementForm = () => {
             >
               Choose File
             </label>
-            {achievement.image && <span className="ml-2">{achievement.image.name}</span>}
+            {achievement.image && (
+              <span className="ml-2">{achievement.image.name}</span>
+            )}
           </div>
         </div>
         <button

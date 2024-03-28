@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const AddProjectForm = () => {
   const [project, setProject] = useState({
-    title: '',
-    description: '',
-    image: '',
-    link: '',
+    title: "",
+    description: "",
+    image: "",
+    link: "",
   });
 
   const handleChange = (e) => {
@@ -16,16 +16,29 @@ const AddProjectForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission, e.g., sending data to backend
-    console.log('Form submitted:', project);
+    const formData = new FormData();
+    formData.append("title", project.title);
+    formData.append("description", project.description);
+    formData.append("image", project.image);
+    formData.append("link", project.link);
+    console.log("Form submitted:", project);
+    const response = await fetch(
+      "https://portfolio-api-nmrs.onrender.com/addprojects",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+    console.log("Form submitted:", response);
     // Reset form fields
     setProject({
-      title: '',
-      description: '',
-      image: '',
-      link: '',
+      title: "",
+      description: "",
+      image: "",
+      link: "",
     });
   };
 
@@ -34,7 +47,12 @@ const AddProjectForm = () => {
       <h2 className="text-2xl font-semibold mb-4">Add New Project</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="title" className="block text-gray-700 font-medium mb-2">Title</label>
+          <label
+            htmlFor="title"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Title
+          </label>
           <input
             type="text"
             id="title"
@@ -46,7 +64,12 @@ const AddProjectForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="description" className="block text-gray-700 font-medium mb-2">Description</label>
+          <label
+            htmlFor="description"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Description
+          </label>
           <textarea
             id="description"
             name="description"
@@ -57,7 +80,12 @@ const AddProjectForm = () => {
           ></textarea>
         </div>
         <div className="mb-4">
-          <label htmlFor="image" className="block text-gray-700 font-medium mb-2">Image URL</label>
+          <label
+            htmlFor="image"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Image URL
+          </label>
           <input
             type="text"
             id="image"
@@ -69,7 +97,12 @@ const AddProjectForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="link" className="block text-gray-700 font-medium mb-2">Project Link</label>
+          <label
+            htmlFor="link"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Project Link
+          </label>
           <input
             type="text"
             id="link"

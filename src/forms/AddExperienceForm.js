@@ -20,6 +20,12 @@ const AddExperienceForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission, e.g., sending data to backend
+    const formData = new FormData();
+    formData.append('title', experience.title)
+    formData.append('title', experience.institution)
+    formData.append('title', experience.description)
+    formData.append('title', experience.startDate)
+    formData.append('title', experience.endDate)
     console.log('Form submitted:', experience);
     // Reset form fields
     setExperience({
