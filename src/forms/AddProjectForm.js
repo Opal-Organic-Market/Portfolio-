@@ -16,6 +16,17 @@ const AddProjectForm = () => {
     }));
   };
 
+  
+  const handleFileChange = (e) =>{
+    const file = e.target.files[0];
+    setProject((prevState) => ({
+      ...prevState,
+      image: file,
+    }));
+
+  }
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission, e.g., sending data to backend
@@ -79,23 +90,28 @@ const AddProjectForm = () => {
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
           ></textarea>
         </div>
+
         <div className="mb-4">
-          <label
-            htmlFor="image"
-            className="block text-gray-700 font-medium mb-2"
-          >
-            Image URL
-          </label>
-          <input
-            type="text"
-            id="image"
-            name="image"
-            value={project.image}
-            onChange={handleChange}
-            placeholder="Enter image URL"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-          />
+          <label htmlFor="image" className="block text-gray-700 font-medium mb-2">Image</label>
+          <div className="flex items-center justify-between">
+            <input
+              type="file"
+              id="image"
+              name="image"
+              onChange={handleFileChange}
+              accept="image/*"
+              className="hidden"
+            />
+            <label
+              htmlFor="image"
+              className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md focus:outline-none focus:bg-blue-600"
+            >
+              Choose File
+            </label>
+            {project.image && <span className="ml-2">{project.image.name}</span>}
+          </div>
         </div>
+
         <div className="mb-4">
           <label
             htmlFor="link"
