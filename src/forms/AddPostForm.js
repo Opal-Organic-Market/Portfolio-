@@ -5,6 +5,7 @@ const AddPostForm = () => {
     title: '',
     author: '',
     body: '',
+    image: null,
   });
 
   const handleChange = (e) => {
@@ -15,15 +16,35 @@ const AddPostForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleFileChange = (e) =>{
+    const file = e.target.files[0];
+    setPost((prevState) => ({
+      ...prevState,
+      image: file,
+    }));
+
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission, e.g., sending data to backend
+    const formData = new FormData();
+    formData.append('title',post.title );
+    formData.append('title',post.author );
+    formData.append('title',post.body );
+    formData.append('image',post.image);
     console.log('Form submitted:', post);
+    const response = await fetch('https://portfolio-api-nmrs.onrender.com/addblogs',{
+      method: 'POST',
+      body: formData
+    })
+    console.log("Post data:", response);
     // Reset form fields
     setPost({
       title: '',
       author: '',
       body: '',
+      image: null,
     });
   };
 
@@ -66,6 +87,28 @@ const AddPostForm = () => {
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
           ></textarea>
         </div>
+
+        <div className="mb-4">
+          <label htmlFor="image" className="block text-gray-700 font-medium mb-2">Image</label>
+          <div className="flex items-center justify-between">
+            <input
+              type="file"
+              id="image"
+              name="image"
+              onChange={handleFileChange}
+              accept="image/*"
+              className="hidden"
+            />
+            <label
+              htmlFor="image"
+              className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md focus:outline-none focus:bg-blue-600"
+            >
+              Choose File
+            </label>
+            {post.image && <span className="ml-2">{post.image.name}</span>}
+          </div>
+        </div>
+        
         <button
           type="submit"
           className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
