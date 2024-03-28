@@ -7,6 +7,7 @@ const Homepage = () => {
     <div>
       <Navbar/>
       <Footer/>
+      <div className='bg-black'> </div>
       
     </div>
   )
