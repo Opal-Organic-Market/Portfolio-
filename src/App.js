@@ -9,6 +9,12 @@ import Experience from './pages/experience';
 import Posts from './pages/posts';
 import Skills from './pages/skills';
 import Project from './pages/project';
+import Adminpage from './pages/admin';
+import AddAchievementForm from './forms/AddAchievementForm';
+import AddExperienceForm from './forms/AddExperienceForm';
+import AddProjectForm from './forms/AddProjectForm';
+import AddSkillsForm from './forms/AddSkillsForm';
+import AddPostForm from './forms/AddPostForm';
 function App() {
   return (
     <>
@@ -23,6 +29,12 @@ function App() {
 <Route path='/postspage' element={<Posts/>}></Route>
 <Route path='/skillspage' element={<Skills/>}></Route>
 <Route path='/projectsspage' element={<Project/>}></Route>
+<Route path='/adminpage' element={<Adminpage/>}></Route>
+<Route path='/add-achievement' element={<AddAchievementForm/>}></Route>
+<Route path='/add-experience' element={<AddExperienceForm/>}></Route>
+<Route path='/add-project' element={<AddProjectForm/>}></Route>
+<Route path='/add-skills' element={<AddSkillsForm/>}></Route>
+<Route path='/add-post' element={<AddPostForm/>}></Route>
 
 
 
